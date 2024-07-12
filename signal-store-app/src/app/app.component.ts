@@ -17,9 +17,10 @@ export class AppComponent {
   public effectSignal = signal(0);
   public message = signal('');
   constructor() {
+
     effect(() => {
       const currentCounter = this.basicSignal();
-      this.message.update(message => `message ${currentCounter}`)
+      this.message.update(() => `message ${currentCounter}`)
     }, {
       allowSignalWrites: true
     });
