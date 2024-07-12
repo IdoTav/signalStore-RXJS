@@ -1,31 +1,29 @@
 <div>
-    <div>
-        <button (click)="setIncrement()">basic set signal example</button>
-        <span>{{basicSignal()}}</span>
-    </div>
-    <div>
-        <button (click)="updateIncrement()">basic update signal example</button>
-        <span>{{basicSignal()}}</span>
-    </div>
-    <div>
-        <button>computed signal example</button>
-        <span>{{computerSignal()}}</span>
-    </div>
-    <div *ngIf="basicSignal() >= 5">
-        <button>untracked example</button>
-        <span>{{untrackedSignal()}}</span>
-    </div>
-    @let list = ['ido', 'adi'];
-    @if(basicSignal() >= 5) {
-    <div>
-        <button>effect example</button>
-        <span>{{message()}}</span>
-    </div>
-    }
-    @else {
-    <div>basic signal is not 5 yet</div>
-    }
-    @for(item of list; track item) {
-        <div>{{item}}</div>
-    }
+    <button (click)="setIncrement()">basic set signal example</button>
+    <span>{{basicSignal()}}</span>
 </div>
+<div>
+    <button (click)="updateIncrement()">basic update signal example</button>
+    <span>{{basicSignal()}}</span>
+</div>
+<div>
+    <button>computed signal example</button>
+    <span>{{computerSignal()}}</span>
+</div>
+<div *ngIf="basicSignal() >= 5">
+    <button>untracked example</button>
+    <span>{{untrackedSignal()}}</span>
+</div>
+@let list = ['ido', 'adi'];
+@if(basicSignal() >= 5) {
+<div>
+    <button>effect example</button>
+    <span>{{message()}}</span>
+</div>
+}
+@else {
+<div>basic signal is not 5 yet</div>
+}
+@for(item of list; track item) {
+<div>{{item}}</div>
+}
