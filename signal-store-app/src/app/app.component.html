@@ -11,12 +11,21 @@
         <button>computed signal example</button>
         <span>{{computerSignal()}}</span>
     </div>
-    <div>
+    <div *ngIf="basicSignal() >= 5">
         <button>untracked example</button>
         <span>{{untrackedSignal()}}</span>
     </div>
+    @let list = ['ido', 'adi'];
+    @if(basicSignal() >= 5) {
     <div>
         <button>effect example</button>
         <span>{{message()}}</span>
     </div>
+    }
+    @else {
+    <div>basic signal is not 5 yet</div>
+    }
+    @for(item of list; track item) {
+        <div>{{item}}</div>
+    }
 </div>
