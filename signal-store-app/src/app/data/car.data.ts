@@ -1,3 +1,4 @@
+import { Observable, delay, map, of } from "rxjs";
 import { Car } from "../models/car.model";
 
 export const CARS: Car[] = [
@@ -44,4 +45,11 @@ export const CARS: Car[] = [
         ownerId: 316313512
     }
 ]
+
+export function loadCars(): Observable<Car[]> {
+    return of(1).pipe(
+        map(_ => CARS),
+        delay(3000)
+    )
+}
 

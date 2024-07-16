@@ -1,1 +1,4 @@
 <div (click)="onDivClick()">ido</div>
+@if(carStore.numberOfCars() > 0) {
+    <carForSell [carList]="carStore.allCars()"></carForSell>
+}
