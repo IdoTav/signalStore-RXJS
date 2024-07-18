@@ -1,5 +1,11 @@
-@for(car of carList; track car) {
-    <div>
-        {{car | json}}
-    </div>
+<h3>car for sell section:</h3>
+@if(carStore.findAllCarsForSale().length === 0) {
+<div>No results</div>
+}
+@else {
+@for(car of carStore.findAllCarsForSale(); track car) {
+<div>
+    {{car | json}}
+</div>
+}
 }

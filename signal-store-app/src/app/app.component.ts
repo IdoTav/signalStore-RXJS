@@ -2,12 +2,13 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CarStore } from './store/car.store';
 import { CarForSellComponent } from "./components/carForSell/CarForSell.Component";
-import { Car } from './models/car.model';
+import { AddNewCar } from "./components/addNewCar/NewCar.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CarForSellComponent],
+  imports: [RouterOutlet, CarForSellComponent, AddNewCar, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -16,8 +17,7 @@ export class AppComponent {
 
   constructor() {}
 
-  public onDivClick(): void {
-    const newCar: Car = {km: 100, carCompany: 'mazda', ownerId: 316222512, model: '3', isForSell: true};
+  public loadCars(): void {
     this.carStore.loadCarsFromServer();
   }
 

@@ -1,4 +1,12 @@
-<div (click)="onDivClick()">ido</div>
+<div>
+    <button (click)="loadCars()">click here to load cars</button>
+</div>
 @if(carStore.numberOfCars() > 0) {
-    <carForSell [carList]="carStore.allCars()"></carForSell>
+<div>{{carStore.allCars() | json}}</div>
 }
+<div>
+    <carForSell></carForSell>
+</div>
+<div>
+    <addNewCar></addNewCar>
+</div>

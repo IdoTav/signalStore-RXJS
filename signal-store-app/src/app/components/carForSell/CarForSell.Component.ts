@@ -1,6 +1,6 @@
-import { Component, Input } from "@angular/core";
-import { Car } from "../../models/car.model";
+import { Component, Input, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { CarStore } from "../../store/car.store";
 
 
 @Component({
@@ -10,7 +10,5 @@ import { CommonModule } from "@angular/common";
     imports: [CommonModule]
   })
 export class CarForSellComponent {
-
-    @Input({required: true})
-    public carList!: Car[];
+  readonly carStore = inject(CarStore);
 }
